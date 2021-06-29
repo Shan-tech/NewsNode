@@ -40,7 +40,7 @@ nodemon test
 
 * Website: https://github.com/Shan-tech
 * Github: [@Shan-tech](https://github.com/Shan-tech)
-* LinkedIn: [@Shankar Anand R](https://linkedin.com/in/Shan-tech)
+* LinkedIn: [@Shankar Anand R](https://linkedin.com/in/ShankarAnand4415)
 
 ## Show your support
 
