@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Top-Headlines</h2>
+    
+    <form action="/" method="POST">
+      <label for="specification">Specification</label>
+      <input  name="specification" placeholder="Covid" type="text"/>
+      <label for="category">Category</label>
+      <input  name="category" placeholder="Health" type="text" />
+      <button id="surf"  >Surf</button>
+    </form>
+
+    <% if( cat!="" || spec!="") { %>
+
+      <% if(headlines!="empty") { %>
+            <!-- orginal lable -->
+              <%for(let i=0;i<15;i++) {%>
+                <section class="lable">
+                  <div class="pic">
+                    <% if ((headlines['articles'][i]['urlToImage'])==null) {%>
+                      <img
+                      src="image/defaultImg.jpg"
+                      alt="Sorry image not provided."
+                    />          
+                      <%} else{ %>
+                    <img
+                      src="<%= headlines['articles'][i]['urlToImage'] %>"
+                      alt="News Image"
+                    />
+                    <% }  %>
+                  </div>
+                  <div class="txt">
+                    <h3><%= headlines['articles'][i]['title'] %></h3>
+                    <% if ((headlines['articles'][i]['description'])==null) {%>
+                      <p id="des">Sorry this news has no description. Pleace check the site for more information.</p>
+                      <%} else{ %>
+                    <p id="des"><%= headlines['articles'][i]['description'] %></p>
+                    <% } %>
+
+                    <div class="type">
+                      <a href="<%= headlines['articles'][i]['url'] %>">
+                        <h5 id="viewType">View in site..</h5>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+                <%}%>
+        <% } else{ %>
+            <img id="nodata" src="/image/No_news_msg.png" alt="Not found">
+          <% } %>
+    <% } %>
+
+  </body>
+</html>
